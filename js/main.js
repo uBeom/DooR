@@ -7,7 +7,7 @@ new fullpage('#fullpage', {
     slidesNavigation: true,
     slidesNavPosition: 'bottom',
     scrollingSpeed: 700,
-    anchors: ['page1', 'page2', 'page3', 'page4'],
+    anchors: ['page1', 'page2', 'page3'],
 });
 
 //methods
@@ -20,6 +20,7 @@ window.onload = function () {
     const slideBtn = document.querySelector('.slideBtnOn');
     const sectionBtn = document.querySelector('.sectionBtn');
     let sectionBtnCheck = false;
+    let slideBtnCheck = false;
 
     slideBtn.addEventListener('click', slide, false);
     sectionBtn.addEventListener('mouseover', over, false);
@@ -48,6 +49,13 @@ window.onload = function () {
             sentences[2].classList.add('animate__fadeOut');
             sentences[3].classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-1s');
         })
+        sentences[3].addEventListener('animationend', () => {
+            setTimeout(slide2Btn, 1000);
+        })
+    }
+
+    function slide2Btn() {
+        slideBtnCheck = true;
     }
 
     function over() {
@@ -71,10 +79,13 @@ window.onload = function () {
     }
 
     function slide() {
-        if (fullpage_api.getActiveSlide().index !== 2) {
+        if (fullpage_api.getActiveSlide().index === 0) {
             fullpage_api.moveSlideRight();
         }
 
+        if (fullpage_api.getActiveSlide().index === 1 && slideBtnCheck === true) {
+            fullpage_api.moveSlideRight();
+        }
         switch (fullpage_api.getActiveSlide().index) {
             case 1:
                 sentenAnim();
