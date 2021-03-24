@@ -7,6 +7,7 @@ new fullpage('#fullpage', {
     slidesNavigation: true,
     slidesNavPosition: 'bottom',
     scrollingSpeed: 700,
+    anchors: ['page1', 'page2', 'page3', 'page4'],
 });
 
 //methods
@@ -66,7 +67,7 @@ window.onload = function () {
     function click() {
         sectionBtnCheck = true;
         sectionBtn.src = './img/1_3_title_btn3.png';
-        setTimeout(fullpage_api.moveSectionDown, 1000);
+        setTimeout(fullpage_api.moveTo('page2', 0), 1000);
     }
 
     function slide() {

@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'arial';
+    font-family: 'Noto Sans KR', sans-serif;
     box-sizing: border-box;
 }
 
@@ -35,11 +37,11 @@
         .tit,
         .sentence {
             opacity: 0;
-<<<<<<< HEAD
             font-size: 2rem;
-=======
-            font-size: 1.5rem;
->>>>>>> 3d10a18d8beb3d049df9e5a78052ca710a3e8bd0
+        }
+
+        .sentences {
+            margin-bottom: 96px;
         }
 
         h2 {
